@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack & live-server --port=3000 --host=127.0.0.1 --entry-file=/public/index.html"
+    "start": "webpack-dev-server --open"
   },
   "keywords": [],
   "author": "",

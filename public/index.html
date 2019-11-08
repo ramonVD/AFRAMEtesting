@@ -17,16 +17,15 @@
             scale="2.0 2.0 2.0" position="0 2 -5"
             animation="property: object3D.position.y; to: 2.2;
             dir: alternate; dur: 2000; loop: true"
-            beating-heart>
+            scale-on-mouseenter>
             </a-box>
-            <a-plane rotation="-90 0 0" width="30" height="30" src="#groundTexture" repeat="18 18"></a-plane>
-            <a-sky src="#skyTexture" ></a-sky>
+            <a-plane rotation="-90 0 0" width="30" height="30" src="#groundTexture" position="0 0.1 0" repeat="18 18"></a-plane>
             <a-light type="ambient" color="#445451"></a-light>
             <a-light type="point" intensity="2" position="2 2 2"></a-light>
             <a-camera>
                 <a-cursor></a-cursor>
             </a-camera>
-            <!-- <a-entity environment="preset: forest; dressing:mushrooms; dressingAmount:690;"></a-entity> -->
+            <a-entity environment="preset: forest; dressing:mushrooms; dressingAmount:1000;"></a-entity>
         </a-scene>
     </body>
 </html>

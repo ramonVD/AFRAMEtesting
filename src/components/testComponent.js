@@ -52,8 +52,8 @@ AFRAME.registerComponent('boxtest', {
 
 AFRAME.registerComponent("scale-on-mouseenter", {
   schema: {
-    to: {default: new THREE.Vector3(2.5,2.5,2.5), type: 'vec3'},
-    from: {defaul: new THREE.Vector3(2,2,2), type: "vec3"},
+    to: {default: new THREE.Vector3(2.7,2.7,2.7), type: 'vec3'},
+    from: {default: new THREE.Vector3(2.0,2.0,2.0), type: "vec3"}
   },
 
   init: function() {
