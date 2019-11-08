@@ -1,18 +1,23 @@
+var animationCounter = 0;
+
 AFRAME.registerComponent('boxtest', {
   schema: {
     width: {type: 'number', default: 1},
     height: {type: 'number', default: 1},
     depth: {type: 'number', default: 1},
-    color: {type: 'color', default: '#AAA'}
   },
 
   init: function () {
     var data = this.data;
     var el = this.el;
+
+
     this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
     this.material = new THREE.MeshStandardMaterial({color: data.color});
     this.mesh = new THREE.Mesh(this.geometry, this.material);
     el.setObject3D('mesh', this.mesh);
+
+
   },
 
   /**
@@ -42,5 +47,41 @@ AFRAME.registerComponent('boxtest', {
 
    remove: function () {
     this.el.removeObject3D('mesh');
+  }
+});
+
+AFRAME.registerComponent("scale-on-mouseenter", {
+  schema: {
+    to: {default: new THREE.Vector3(2.5,2.5,2.5), type: 'vec3'},
+    from: {defaul: new THREE.Vector3(2,2,2), type: "vec3"},
+  },
+
+  init: function() {
+    var data = this.data;
+    var me = this.el;
+
+    me.addEventListener("mouseenter", function() {
+      me.object3D.scale.copy(data.to);
+    });
+
+    me.addEventListener("mouseleave", function() {
+      me.object3D.scale.copy(data.from);
+    });
+  }
+});
+
+//Need to acount for framerate I guess...
+AFRAME.registerComponent("beating-heart", {
+  schema: {},
+
+  tick: function() {
+    animationCounter += 1;
+    if (animationCounter % 60 == 0) {
+      this.el.object3D.scale.copy(new THREE.Vector3(2.5,2.5,2.5));
+    }
+    else if(animationCounter % 80 == 0) {
+      this.el.object3D.scale.copy(new THREE.Vector3(2,2,2));
+      animationCounter = 0;
+    }
   }
 });
