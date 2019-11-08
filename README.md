@@ -13,7 +13,7 @@ Passos a la consola en Linux:
 Amb això s'instal·la NVM. Un cop fet això, a la consola escrivim:
 
 #### nvm install --lts
-####nvm use --lts
+#### nvm use --lts
 
 Amb això instal·larem i farem servir l'última versió LTS (Long Term Support) de node.
 
