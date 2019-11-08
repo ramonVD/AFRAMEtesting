@@ -5,6 +5,8 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, './public'),
     compress: true,
+    host: '127.0.0.1',
+    port: 3000,
     publicPath: "/dist",
     watchContentBase: true,
   },
