@@ -24,3 +24,6 @@ Ara anem a la carpeta on heu copiat els arxius de github. Un cop sigueu a la car
 
 Amb això s'instal·laran les dependències del projecte (que podeu trobar a package.json) i començarà l'script que
 començarà l'entorn de treball.
+
+
+NOTA: La branca ambWebpack és el mateix però fent servir webpack en comptes de live-server, a més també conté les meves proves.
